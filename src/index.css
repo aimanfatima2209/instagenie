@@ -1,13 +1,168 @@
+/* index.css - base resets and typography */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  background-color: #fafafa; /* Instagram's light background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #262626; /* Instagram's default text color */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Scrollbar styling - subtle and modern */
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #fafafa;
+}
+
+/* App.css */
+.App {
+  text-align: center;
+  max-width: 500px; /* Instagram max width */
+  margin: 0 auto;
+  background-color: white;
+  border: 1px solid #dbdbdb; /* Instagram border color */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 16px;
+  color: #262626;
+}
+
+/* Header - Instagram style */
+.App-header {
+  background-color: white;
+  padding: 16px 0;
+  border-bottom: 1px solid #dbdbdb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 24px;
+  color: #262626;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Logo - make it crisp and subtle */
+.App-logo {
+  height: 40px;
+  pointer-events: none;
+  margin-right: 10px;
+  user-select: none;
+  animation: none; /* Disable spin for Instagram style */
+}
+
+/* If you want to keep spin, slow it down and subtle */
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo-spin {
+    animation: App-logo-spin infinite 60s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Link styling */
+.App-link {
+  color: #0095f6; /* Instagram blue */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.App-link:hover {
+  color: #005bb5;
+  text-decoration: underline;
+}
+
+/* Buttons - Instagram style */
+button {
+  background-color: #0095f6;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+button:hover {
+  background-color: #0073cc;
+}
+
+/* Input fields */
+input, textarea {
+  border: 1px solid #dbdbdb;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 8px 0 16px 0;
+  outline-color: #0095f6;
+  transition: border-color 0.2s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #0095f6;
+  box-shadow: 0 0 5px rgba(0,149,246,0.5);
+}
+
+/* Cards (like posts or boxes) */
+.card {
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  margin: 16px 0;
+  padding: 16px;
+  text-align: left;
+}
+
+/* Text highlights */
+h1, h2, h3, h4, h5 {
+  color: #262626;
+  font-weight: 700;
+  margin: 12px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .App {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 16px 10px;
+  }
+
+  .App-header {
+    font-size: 20px;
+  }
 }
