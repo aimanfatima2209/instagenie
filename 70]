@@ -1,0 +1,1 @@
+    return [t["trend"] for t in trends if t["popularity"] 
