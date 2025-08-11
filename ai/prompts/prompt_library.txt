@@ -1,0 +1,36 @@
+# ai/prompts/prompt_library.py
+
+# Library of reusable prompts for captions, hashtags, and event ideas
+
+def build_caption_prompt(niche: str, tone: str, topic: str, count: int = 3) -> str:
+    """
+    Builds a prompt for generating captions.
+    """
+    return (
+        f"You are an Instagram content creator for the niche '{niche}'.\n"
+        f"Write {count} engaging captions in a {tone} tone about '{topic}'.\n"
+        f"Each caption should be catchy, engaging, and fit within 2 sentences.\n"
+        f"Return them as a simple numbered list."
+    )
+
+def build_hashtag_prompt(niche: str) -> str:
+    """
+    Builds a prompt for generating hashtags.
+    """
+    return (
+        f"Generate 10 Instagram hashtags for the '{niche}' niche.\n"
+        f"Classify them into:\n"
+        f"- High reach hashtags\n"
+        f"- Medium reach hashtags\n"
+        f"- Niche-specific hashtags\n"
+        f"Return them in JSON format with keys: high, medium, niche."
+    )
+
+def build_event_prompt(niche: str) -> str:
+    """
+    Builds a prompt for suggesting upcoming events for a niche.
+    """
+    return (
+        f"List 3 upcoming international or regional events relevant to the '{niche}' niche.\n"
+        f"Return them as JSON with fields: name, date, niche."
+    )

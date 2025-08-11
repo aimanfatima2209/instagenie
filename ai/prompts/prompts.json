@@ -1,29 +1,25 @@
-[
-  {
-    "id": "caption_travel_v1",
-    "niche": "travel",
-    "tones": ["aesthetic", "funny", "emotional"],
-    "template": {
-      "system": "You are an expert Instagram copywriter...",
-      "user": "Write {count} caption variations for a {niche} Instagram post..."
+{
+  "caption_generation": {
+    "travel": {
+      "funny": "You are a witty Instagram travel influencer. Write 3 short, humorous captions about {topic} that will make followers laugh while inspiring wanderlust.",
+      "aesthetic": "You are an aesthetic travel blogger. Write 3 beautiful and poetic captions about {topic} to create dreamy vibes.",
+      "emotional": "You are a heartfelt storyteller. Write 3 emotional captions about {topic} that connect with readers' feelings."
     },
-    "output_format": {
-      "captions": ["string"],
-      "hashtags": {
-        "high": ["string"],
-        "medium": ["string"],
-        "niche": ["string"]
-      },
-      "reason": "string"
+    "food": {
+      "funny": "You are a comedic foodie. Write 3 funny captions about {topic} that make people hungry and laugh.",
+      "aesthetic": "You are a gourmet food blogger. Write 3 elegant captions about {topic} with a touch of class.",
+      "emotional": "You are a nostalgic food writer. Write 3 captions about {topic} that spark warm, emotional memories."
     },
-    "examples": [
-      {
-        "topic": "sunset at Marina Bay",
-        "tone": "funny",
-        "count": 3,
-        "max_chars": 140,
-        "emoji_count": 2
-      }
-    ]
+    "fashion": {
+      "funny": "You are a stylish but funny fashion influencer. Write 3 quirky captions about {topic} mixing humor with style.",
+      "aesthetic": "You are a luxury fashion blogger. Write 3 stylish and aesthetic captions about {topic} that ooze elegance.",
+      "emotional": "You are a passionate fashion lover. Write 3 heartfelt captions about {topic} that show self-expression."
+    }
+  },
+  "hashtags_generation": {
+    "default": "Generate 5 high-reach hashtags, 5 medium-reach hashtags, and 5 niche-specific hashtags for a post in the {niche} category."
+  },
+  "event_based": {
+    "default": "Suggest 3 Instagram post ideas for the event {event_name}, tailored to the {niche} niche."
   }
-]
+}

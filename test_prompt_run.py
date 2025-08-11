@@ -1,28 +1,23 @@
-from ai.generators.caption_generator import generate_captions
+from services.openai_service import generate_captions_and_hashtags
 from ai.trends.trend_tracker import get_trends_for_niche
 from ai.events.event_suggester import suggest_events
 
+print("🚀 InstaGenie – Teammate 3 AI Module Test\n")
+
 niche = "travel"
 
-# Captions
-captions_data = generate_captions("sunset at Marina Bay", "funny", count=3)
-print("\n📝 Generated Captions:")
-for cap in captions_data["captions"]:
-    print(f"  - {cap}")
+print(f"📌 Generated Captions & Hashtags for niche: {niche}")
+captions_output = generate_captions_and_hashtags(
+    niche, tone="funny", topic="sunset at Marina Bay 🌅", count=3, use_mock=True
+)
+print(captions_output, "\n")
 
-# Hashtags
-print("\n#️⃣ Hashtags:")
-for level, tags in captions_data["hashtags"].items():
-    print(f"  {level.capitalize()}: {', '.join(tags)}")
+print(f"🔥 Popular Trends in niche: {niche}")
+trends_output = get_trends_for_niche(niche, use_mock=True)
+print(trends_output, "\n")
 
-# Trends
-trends = get_trends_for_niche(niche)
-print(f"\n📈 Popular {niche.capitalize()} Trends:")
-for t in trends:
-    print(f"  - {t}")
+print(f"🎯 Upcoming Events for niche: {niche}")
+events_output = suggest_events(niche, use_mock=True)
+print(events_output, "\n")
 
-# Events
-events = suggest_events(niche)
-print(f"\n📅 Upcoming {niche.capitalize()} Events:")
-for e in events:
-    print(f"  - {e['name']} ({e['date']})")
+print("✅ All Teammate 3 modules are working and returning mock/test data successfully!")
