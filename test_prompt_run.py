@@ -1,14 +1,28 @@
 from ai.generators.caption_generator import generate_captions
 from ai.trends.trend_tracker import get_trends_for_niche
-from ai.events.event_suggester import get_events_for_niche
+from ai.events.event_suggester import suggest_events
 
-# Test caption generation
-captions = generate_captions("travel", "funny", "sunset at Marina Bay", 3, 140, 2)
-print("Generated Captions:", captions)
-
-# Test trends for niche
 niche = "travel"
-print(f"Popular {niche} trends:", get_trends_for_niche(niche))
 
-# Test events for niche
-print(f"Upcoming {niche} events:", get_events_for_niche(niche))
+# Captions
+captions_data = generate_captions("sunset at Marina Bay", "funny", count=3)
+print("\n📝 Generated Captions:")
+for cap in captions_data["captions"]:
+    print(f"  - {cap}")
+
+# Hashtags
+print("\n#️⃣ Hashtags:")
+for level, tags in captions_data["hashtags"].items():
+    print(f"  {level.capitalize()}: {', '.join(tags)}")
+
+# Trends
+trends = get_trends_for_niche(niche)
+print(f"\n📈 Popular {niche.capitalize()} Trends:")
+for t in trends:
+    print(f"  - {t}")
+
+# Events
+events = suggest_events(niche)
+print(f"\n📅 Upcoming {niche.capitalize()} Events:")
+for e in events:
+    print(f"  - {e['name']} ({e['date']})")

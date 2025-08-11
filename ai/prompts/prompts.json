@@ -4,8 +4,8 @@
     "niche": "travel",
     "tones": ["aesthetic", "funny", "emotional"],
     "template": {
-      "system": "You are an expert Instagram copywriter specializing in {niche}.",
-      "user": "Write {count} engaging {tone} captions for an Instagram post about {topic}. Max {max_chars} characters. Include {emoji_count} emojis."
+      "system": "You are an expert Instagram copywriter...",
+      "user": "Write {count} caption variations for a {niche} Instagram post..."
     },
     "output_format": {
       "captions": ["string"],
@@ -15,6 +15,15 @@
         "niche": ["string"]
       },
       "reason": "string"
-    }
+    },
+    "examples": [
+      {
+        "topic": "sunset at Marina Bay",
+        "tone": "funny",
+        "count": 3,
+        "max_chars": 140,
+        "emoji_count": 2
+      }
+    ]
   }
 ]
