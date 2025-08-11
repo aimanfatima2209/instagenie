@@ -1,14 +1,22 @@
-import json, os
-from ai.trends.trend_tracker import get_trends_for_niche
-from ai.events.event_suggester import get_upcoming_events
+import json
+import os
+import random
 
-def generate_captions():
-    trends = get_trends_for_niche()
-    events = get_upcoming_events()
+def load_prompts():
+    with open(os.path.join("ai", "prompts", "prompts.json"), "r") as f:
+        return json.load(f)
 
-    captions = []
-    for trend in trends:
-        for event in events:
-            captions.append(f"Don't miss our {event['event']}! Featuring {trend} 🌟")
+def generate_caption(niche, tone, topic="sunset at Marina Bay", count=3, max_chars=140, emoji_count=2):
+    prompts = load_prompts()
+    prompt_data = next((p for p in prompts if p["niche"] == niche), None)
+    if not prompt_data:
+        return {"error": f"No prompts found for niche '{niche}'"}
 
-    return captions
+    # For now — mock captions instead of calling OpenAI API
+    captions = [f"{tone.title()} caption {i+1} about {topic} 🌅" for i in range(count)]
+    hashtags = {
+        "high": ["#viral", "#trending"],
+        "medium": ["#socialmedia", "#creativity"],
+        "niche": [f"#{niche}"]
+    }
+    return {"captions": captions, "hashtags": hashtags, "reason": "Mock data for testing"}

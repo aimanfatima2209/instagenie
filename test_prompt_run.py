@@ -1,12 +1,14 @@
-from ai.trends.trend_tracker import track_trends
-from ai.generators.caption_generator import generate_caption
-from ai.events.event_suggester import suggest_event_post
+from ai.generators.caption_generator import generate_captions
+from ai.trends.trend_tracker import get_trends_for_niche
+from ai.events.event_suggester import get_events_for_niche
 
-print("=== Trend Tracking ===")
-print(track_trends())
+# Test caption generation
+captions = generate_captions("travel", "funny", "sunset at Marina Bay", 3, 140, 2)
+print("Generated Captions:", captions)
 
-print("=== AI Caption Generation ===")
-print(generate_caption("travel photography"))
+# Test trends for niche
+niche = "travel"
+print(f"Popular {niche} trends:", get_trends_for_niche(niche))
 
-print("=== Event-Based Suggestions ===")
-print(suggest_event_post())
+# Test events for niche
+print(f"Upcoming {niche} events:", get_events_for_niche(niche))

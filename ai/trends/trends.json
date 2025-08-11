@@ -1,5 +1,6 @@
 [
-  {"trend": "AI-powered captions", "popularity": 85},
-  {"trend": "Travel photography", "popularity": 72},
-  {"trend": "Eco-friendly living tips", "popularity": 64}
+  {"trend": "AI-powered captions", "popularity": 85, "niche": "tech"},
+  {"trend": "Travel photography", "popularity": 72, "niche": "travel"},
+  {"trend": "Eco-friendly living tips", "popularity": 64, "niche": "lifestyle"},
+  {"trend": "Street food reels", "popularity": 80, "niche": "food"}
 ]

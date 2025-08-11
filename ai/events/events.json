@@ -1,14 +1,5 @@
 [
-  {
-    "event": "Product launch",
-    "date": "2025-09-10"
-  },
-  {
-    "event": "Photography contest",
-    "date": "2025-09-15"
-  },
-  {
-    "event": "AI conference",
-    "date": "2025-09-20"
-  }
+  {"event": "World Tourism Day", "date": "2025-09-27", "niche": "travel"},
+  {"event": "World Food Day", "date": "2025-10-16", "niche": "food"},
+  {"event": "Earth Day", "date": "2026-04-22", "niche": "lifestyle"}
 ]

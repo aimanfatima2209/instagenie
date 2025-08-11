@@ -1,3 +1,20 @@
-{
-  "caption_prompt": "Write a catchy Instagram caption for: {trend} and {event}"
-}
+[
+  {
+    "id": "caption_travel_v1",
+    "niche": "travel",
+    "tones": ["aesthetic", "funny", "emotional"],
+    "template": {
+      "system": "You are an expert Instagram copywriter specializing in {niche}.",
+      "user": "Write {count} engaging {tone} captions for an Instagram post about {topic}. Max {max_chars} characters. Include {emoji_count} emojis."
+    },
+    "output_format": {
+      "captions": ["string"],
+      "hashtags": {
+        "high": ["string"],
+        "medium": ["string"],
+        "niche": ["string"]
+      },
+      "reason": "string"
+    }
+  }
+]
